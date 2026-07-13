@@ -1,0 +1,11 @@
+applications:
+  helloworld:
+    type: nodejs:20
+    web:
+      commands:
+        start: npm start
+
+routes:
+  "https://{default}/":
+    type: upstream
+    upstream: "helloworld:http"
